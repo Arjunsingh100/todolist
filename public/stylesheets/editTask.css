@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+}
+.edit-container {
+    width: 400px;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+.edit-container form{
+    width: 80%;
+}
+.edit-container form input {
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.edit-container form button {
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(32, 32, 233);
+    color: white;
+    font-weight: 300;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.edit-container button{
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(219, 117, 22);
+    color: white;
+    font-weight: 300;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

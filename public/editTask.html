@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./stylesheets/editTask.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="edit-container">
+        <h2>Edit Task Page</h2>
+        <form class="submit-form">
+            <input type="text" name="task" class="task-name" />
+            <button type="submit" class="submit-btn">Edit</button>
+        </form>
+        <button onclick=backPage()>GO Back</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script>
+        const taskName = document.querySelector('.task-name');
+        const submitBTN = document.querySelector('.submit-btn');
+        const submitForm = document.querySelector('.submit-form');
+        let params = window.location.search;
+        const index = new URLSearchParams(params).get("index");
+        console.log(index)
+        console.log(params)
+
+        const backPage = function () {
+            history.back();
+        }
+        const getTask = async function () {
+            const data = await axios.get(`/getSingleTask${params}`);
+            taskName.value = data.data.singleData.actions[index];
+            console.log(data)
+        }
+
+        getTask();
+
+        submitForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            try {
+                const data = await axios.put(`/editTask${params}`, { taskName: taskName.value })
+                console.log(data)
+                taskName.value = "";
+                alert("Task Updated Successfully");
+            }
+            catch (error) {
+                console.log(error)
+            }
+        })
+
+    </script>
+</body>
+
+</html>

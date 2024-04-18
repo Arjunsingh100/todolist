@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link href="/stylesheets/todo.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="add-task">
+            <h1>Welcome <%=result1[0].username%>
+            </h1>
+            <form method="get" action="/login">
+                <button type="submit">Logout</button>
+            </form>
+            <form method="POST" action="/addtask">
+                <input type="text" name="content">
+                <input style="display: none;" type="text" name='key' value="<%=result1[0].username%>">
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+            <div class="todoActions">
+                <% for(let i=0;i<result1[0].actions.length;i++){%>
+                    <div class="todoAction">
+                        <h1>
+                            <%=result1[0].actions[i]%>
+                        </h1>
+                        <form method="POST" action="/remove">
+                            <a href='editTask.html?id=<%=result1[0]._id%>&index=<%=i%>'>Edit</a>
+                            <button type="submit" name="id" value="<%=i%>">Remove</button>
+                            <input style="display: none;" type="text" name="user" value="<%=result1[0].username%>">
+                        </form>
+                    </div>
+                    <%} %>
+            </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+body form {
+    width: 300px;
+    height: 300px;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 5px;
+    border-radius: 9px;
+    
+}
+body form h1{
+    font-size: 25px;
+    color: rgb(14, 241, 14);
+    font-weight: 500;
+    margin-top: 20px; 
+}
+body form input{
+    width: 240px;
+    height: 40px;
+    border-radius: 9px;
+    font-weight: 500;
+    font-size: 19px;
+    padding-left: 10px;
+    background-color: #444;
+    border: none;
+    outline: none;
+}
+.forget-sec{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.forget-sec p{
+    font-size: 20px;
+    color: white;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+.forget-sec a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(14, 241, 14);
+}
+body form button{
+    width: 250px;
+    height: 40px;
+    background-color: rgb(14, 241, 14);
+    color: white;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 9px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
