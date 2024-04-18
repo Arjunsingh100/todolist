@@ -67,15 +67,7 @@ app.post('/login', async (req, res, next) => {
         else{
             res.send('<h2>You have entered wrong credentials, please enter valid username and password<h2>')
         }
-        //  console.log(bcrypt.compare(req.body.password,result1[0].password, function (err,result){
-        //     return result;
-        // }))
-        // bcrypt.compare(req.body.password, result1[0].password, function (err, result) {
-        //     if (result) {
-        //         res.render('todo', { result1: result1, title: 'Todolist' });
-        //         console.log(result1[0].actions.length);
-        //     }
-        // })
+         
     }
     catch (error) {
         res.send('you have enterd wrong credentials');
