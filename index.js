@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/register', (req, res) => {
     res.render('register.ejs');
 })
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     res.render('login.ejs');
 })
 
